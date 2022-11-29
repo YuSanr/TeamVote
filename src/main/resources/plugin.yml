@@ -1,0 +1,7 @@
+name: TeamVote
+version: '${project.version}'
+main: kawayi.hanhanqaq.teamvote.TeamVote
+
+depend: [PlayerPoints]
+commands:
+  votemenu:

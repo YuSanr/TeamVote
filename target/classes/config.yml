@@ -1,0 +1,6 @@
+Debug: false
+MatchStarted: false
+Item:
+  name: "&e第x场比赛：&c未开始"
+  lore1: ""
+  lore2: "&7k开始时间：yy/mm/dd"

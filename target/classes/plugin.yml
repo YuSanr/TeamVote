@@ -1,0 +1,7 @@
+name: TeamVote
+version: '1.0-SNAPSHOT'
+main: kawayi.hanhanqaq.teamvote.TeamVote
+
+depend: [PlayerPoints]
+commands:
+  votemenu:
