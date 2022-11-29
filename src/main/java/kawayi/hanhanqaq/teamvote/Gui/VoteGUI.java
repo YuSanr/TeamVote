@@ -79,6 +79,19 @@ public class VoteGUI implements CommandExecutor {
             Bukkit.getPlayer(player.getName()).openInventory(inv);
         }
     }
+    /**
+    * 放置map的循环
+    * 求求你养成习惯
+    * 由于内存引用的特性 oldMap和输入的map理应当同时被修改
+    */
+    public static void putColorMap(int n,String putChar,HashMap oldMap){
+        for (int i = 1;i<=n;i++){
+            oldMap.put(i,putChar);
+        }
+        if (n == 0){
+            oldMap.put(0,putChar);
+        }
+    }
     public static String thePopularProgress(String teamName) {
         Set<String> keys = FileConfigManager.votedata.getKeys(true);
         HashMap<String,Integer> map = new HashMap<>();
@@ -110,16 +123,7 @@ public class VoteGUI implements CommandExecutor {
         }
         double teamStakedPoints = map.get("teamstaked");
         double precent = teamStakedPoints/stakedPoints * 100;
-        colorMap.put(1,"§7");
-        colorMap.put(2,"§7");
-        colorMap.put(3,"§7");
-        colorMap.put(4,"§7");
-        colorMap.put(5,"§7");
-        colorMap.put(6,"§7");
-        colorMap.put(7,"§7");
-        colorMap.put(8,"§7");
-        colorMap.put(9,"§7");
-        colorMap.put(10,"§7");
+        putColorMap(10,"§7",colorMap);
         switch (finalPercent((int) precent)) {
             case 0:
                 colorMap.put(0,"§b");
